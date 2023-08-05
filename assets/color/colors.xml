@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="white">#FFFFFF</color>
+    <color name="black">#000000</color>
+    <color name="red">#FF0000</color>
+    <color name="input">#FAFDFD</color>
+    <color name="background">#F2F5F5</color>
+    <color name="gray">#E1E4E4</color>
+    <color name="gray1">#D2D7D7</color>
+    <color name="gray2">#8FA0A0</color>
+    <color name="gray3">#424F4F</color>
+    <color name="gray6">#8E8E93</color>
+    <color name="gray2">#8FA0A0</color>
+    <color name="gray3">#424F4F</color>
+    <color name="green">#00A000</color>
+    <color name="green1">#1DBE03</color>
+    <color name="green2">#1DBE03</color>
+    <color name="blue_percent">#36E5E5</color>
+    <color name="default_icon">#B0CCCC</color>
+    <color name="primary_color">#013636</color>
+    <color name="background">#F2F5F5</color>
+    <color name="main_color">#336666</color>
+</resources>
