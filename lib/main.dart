@@ -1,4 +1,3 @@
-
 import 'dart:async';
 import 'dart:developer';
 
@@ -27,7 +26,7 @@ class AppBlocObserver extends BlocObserver {
   }
 }
 
-Future<void> main() async {
+FutureOr<void> main() async {
   FlutterError.onError = (details) {
     log(details.exceptionAsString(), stackTrace: details.stack);
   };
@@ -67,7 +66,4 @@ Future<void> main() async {
     },
     (error, stackTrace) => log(error.toString(), stackTrace: stackTrace),
   );
-
 }
-
-

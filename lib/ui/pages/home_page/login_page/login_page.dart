@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:super_rich_text/super_rich_text.dart';
 import 'package:ticket/core/extensions/app_extensions.dart';
 import 'package:ticket/core/utils/assets.gen.dart';
 import 'package:ticket/core/utils/colors.gen.dart';
@@ -62,7 +63,14 @@ class LoginPage extends StatelessWidget {
                 FadeAnimation(
                   delay: .9,
                   child: AppWidgets.textLocale(
-                          localeKey: "Ticket",
+                          localeKey: "///E-///Ticket",
+                          isRichText: true,
+                          othersMarkers: [
+                            MarkerText(
+                                marker: '///',
+                                style: const TextStyle(
+                                    color: Colors.orangeAccent)),
+                          ],
                           fontSize: 24.sp,
                           fontWeight: FontWeight.w600,
                           textAlign: TextAlign.start,

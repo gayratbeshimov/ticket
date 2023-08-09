@@ -7,6 +7,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_easyloading/flutter_easyloading.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:ticket/ui/pages/event_page/event_page.dart';
 import 'package:ticket/ui/pages/home_page/home_page.dart';
 import 'package:ticket/ui/pages/home_page/login_page/login_page.dart';
 import 'package:ticket/ui/pages/sign_up_page/sign_up_page.dart';
@@ -15,7 +16,7 @@ import 'core/bloc/language_cubit/language_cubit.dart';
 import 'core/services/hive_service.dart';
 import 'core/services/http_service/http_service.dart';
 import 'core/services/http_service/signup_and_login_service.dart';
-import 'core/services/locale_db/locale_db_service.dart';
+
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
@@ -83,46 +84,8 @@ class AppModule extends Module {
         ModuleRoute("/", module: HomePageModule()),
         ModuleRoute("/", module: SignupModule()),
         ModuleRoute("/", module: LoginPageModule()),
+        ModuleRoute("/", module: EventModule()),
 
-        // ModuleRoute("/", module: VisitsPageModule()),
-        // ModuleRoute("/", module: ActReconciliationOderPageModule()),
-        // ModuleRoute("/", module: ActReconciliationPageModule()),
 
-        // ModuleRoute("/", module: LoginPageModule()),
-        // ModuleRoute("/", module: BalancePageModule()),
-        // ModuleRoute("/", module: RefundPageModule()),
-        // ModuleRoute("/", module: AboutOrderModule()),
-        // ModuleRoute("/", module: OutletsMapModule()),
-        // ModuleRoute("/", module: CustomerDataEditingPageModule()),
-        // ModuleRoute("/", module: DiagnosticsPageModule()),
-        // ModuleRoute("/", module: DebtorsPageModule()),
-        // ModuleRoute("/", module: RemainStockPageModel()),
-        // ModuleRoute("/", module: OrdersPageModule()),
-        // ModuleRoute("/", module: DebtorsOrdersPageModule()),
-        // ModuleRoute("/", module: DebtorsHistoryModule()),
-        // ModuleRoute("/", module: RemainDetailWidgetModule()),
-        // ModuleRoute("/", module: DebtorsOrdersReportPageModule()),
-        // ModuleRoute("/", module: MapPageModule()),
-        // ModuleRoute("/", module: VisitsMapModule()),
-        // // ModuleRoute("/", module: DebtorsHistoryModule()),
-        //
-        // ModuleRoute("/", module: OrderIdPageModule()),
-        // ModuleRoute("/", module: RefundEditPageModule()),
-        // ModuleRoute("/", module: AllTasksModule()),
-        // // ModuleRoute("/", module: CustomerDataPageModule()),
-        // ModuleRoute("/", module: RestContainerPageModule()),
-        // ModuleRoute("/", module: ClientAboutModule()),
-        // ModuleRoute("/", module: ClientDetailPageModule()),
-        // ModuleRoute("/", module: ClientDevicesModule()),
-        // ModuleRoute("/", module: HistoryOrdersModule()),
-        // ModuleRoute("/", module: OrderFromModule()),
-        // ModuleRoute("/", module: AddOrderPageModule()),
-        // ModuleRoute("/", module: RemainsItemPageModule()),
-        // ModuleRoute("/", module: ActReconciliationOderPageModule()),
-        // ModuleRoute("/", module: ActReconciliationPageModule()),
-        // ModuleRoute("/", module: DraftPageModule()),
-        // ModuleRoute("/", module: SalaryPageModule()),
-        // ModuleRoute("/", module: ProfilePageModule()),
-        // ModuleRoute("/", module: RefundOrderModule()),
       ];
 }

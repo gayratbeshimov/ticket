@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:super_rich_text/super_rich_text.dart';
 import 'package:ticket/core/extensions/app_extensions.dart';
 import 'package:ticket/core/utils/assets.gen.dart';
 import 'package:ticket/ui/pages/home_page/login_page/login_page.dart';
@@ -61,7 +62,17 @@ class SignUpPage extends StatelessWidget {
                     FadeAnimation(
                       delay: 0.7,
                       child: AppWidgets.textLocale(
-                              localeKey: "Ticket",
+                          localeKey: "///E-///Ticket",
+                          isRichText: true,
+                          othersMarkers: [
+                            MarkerText(
+                                marker: '///',
+                                style: const TextStyle(
+                                    color: Colors.orangeAccent
+                                )
+                            ),
+
+                          ],
                               fontSize: 24.sp,
                               fontWeight: FontWeight.w600,
                               textAlign: TextAlign.start,

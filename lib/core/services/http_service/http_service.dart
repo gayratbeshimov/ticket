@@ -24,7 +24,7 @@ class HttpService {
 
   Dio? _dio;
 
-  FutureOr<Response?> post({
+  Future<Response?> post({
     required String apiURL,
     String? path,
     String? token,
