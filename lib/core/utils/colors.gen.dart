@@ -46,9 +46,6 @@ class ColorName {
   /// Color: #1DBE03
   static const Color green1 = Color(0xFF1DBE03);
 
-  /// Color: #1DBE03
-  static const Color green2 = Color(0xFF1DBE03);
-
   /// Color: #FAFDFD
   static const Color input = Color(0xFFFAFDFD);
 

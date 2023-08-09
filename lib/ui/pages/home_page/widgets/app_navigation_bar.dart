@@ -17,9 +17,9 @@ class AppNavigationBar extends StatelessWidget {
       padding: EdgeInsets.only(top: 10.w),
       height: 70.w,
       width: MediaQuery.of(context).size.width,
-      decoration: const BoxDecoration(
-        color: ColorName.primaryColor,
-        borderRadius: BorderRadius.only(
+      decoration:const  BoxDecoration(
+        color: ColorName.green1,
+        borderRadius:  BorderRadius.only(
             topLeft: Radius.circular(12), topRight: Radius.circular(12)),
         boxShadow: [
           BoxShadow(
@@ -43,7 +43,7 @@ class AppNavigationBar extends StatelessWidget {
       BuildContext context,
       ) {
     switch (appNavigationType) {
-      case AppNavigationType.MAIN:
+      case AppNavigationType.EVENT:
         return Container();
       case AppNavigationType.BASKET:
         return Container();

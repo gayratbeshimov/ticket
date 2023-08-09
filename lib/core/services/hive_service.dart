@@ -1,3 +1,7 @@
+
+
+import 'dart:core';
+import 'dart:async';
 import 'dart:ui';
 
 import 'package:flutter_modular/flutter_modular.dart';
@@ -8,15 +12,15 @@ class HiveService {
 
   late Box _box;
 
-  static Future<HiveService> init() async {
+  static  init() async {
     var instance = HiveService();
 
-    instance._box = await Hive.openBox('agent');
+    instance._box = await Hive.openBox('ticket');
 
     return instance;
   }
 
-  Future delete() async {
+  FutureOr delete() async {
     await Hive.deleteFromDisk();
   }
 

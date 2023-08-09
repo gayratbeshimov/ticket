@@ -11,7 +11,7 @@ class AppNavigationBloc extends Bloc<AppNavigationEvent, AppNavigationState> {
 
   AppNavigationBloc()
       : super(const AppNavigationState(
-          appNavigationType: AppNavigationType.MAIN,
+          appNavigationType: AppNavigationType.EVENT,
         )) {
     on<AppNavigationChanged>((event, emit) {
       emit(

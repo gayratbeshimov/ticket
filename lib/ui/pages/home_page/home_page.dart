@@ -4,6 +4,8 @@ import 'package:flutter_modular/flutter_modular.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:ticket/ui/pages/home_page/widgets/app_navigation_bar.dart';
 import 'package:ticket/ui/pages/home_page/widgets/app_navigation_bar_item.dart';
+import 'package:ticket/ui/pages/event_page/event_page.dart';
+import 'package:ticket/ui/pages/sign_up_page/sign_up_page.dart';
 
 import '../../../core/bloc/app_navigation/app_navigation_bloc.dart';
 import '../../../core/bloc/language_cubit/language_cubit.dart';
@@ -11,6 +13,7 @@ import '../../../core/localization/locale_keys.g.dart';
 import '../../../core/routes/auth_guard.dart';
 import '../../../core/routes/module_init_guard.dart';
 import '../../../core/utils/assets.gen.dart';
+import '../../../core/utils/colors.gen.dart';
 
 class HomePageModule extends Module {
   @override
@@ -59,14 +62,14 @@ class HomePage extends StatelessWidget {
                       onPressed: () {
                         bloc.add(
                           const AppNavigationChanged(
-                            appNavigationType: AppNavigationType.MAIN,
+                            appNavigationType: AppNavigationType.EVENT,
                           ),
                         );
                       },
-                      icon: Assets.images.icons.home.svg(),
+                      icon: Assets.images.icons.home.svg(color: ColorName.white),
                       iconOnTap: Assets.images.icons.homeActive.svg(),
-                      title: "Main",
-                      isActive: state.appNavigationType == AppNavigationType.MAIN,
+                      title: "Events",
+                      isActive: state.appNavigationType == AppNavigationType.EVENT,
                     ),
                     AppNavigationBarItem(
                       onPressed: () {
@@ -76,7 +79,7 @@ class HomePage extends StatelessWidget {
                           ),
                         );
                       },
-                      icon: Assets.images.icons.location.svg(),
+                      icon: Assets.images.icons.location.svg(color: ColorName.white),
                       iconOnTap: Assets.images.icons.locationActive.svg(),
                       title: "Baskets",
                       isActive:
@@ -90,7 +93,7 @@ class HomePage extends StatelessWidget {
                           ),
                         );
                       },
-                      icon: Assets.images.icons.pieChart.svg(),
+                      icon: Assets.images.icons.pieChart.svg(color: ColorName.white),
                       iconOnTap: Assets.images.icons.pieChartActive.svg(),
                       title: "My ticket",
                       isActive:
@@ -104,7 +107,7 @@ class HomePage extends StatelessWidget {
                           ),
                         );
                       },
-                      icon: Assets.images.icons.draft.svg(),
+                      icon: Assets.images.icons.draft.svg(color: ColorName.white),
                       iconOnTap: Assets.images.icons.draftActive.svg(),
                       title: "Profile",
                       isActive:
@@ -125,8 +128,8 @@ class HomePage extends StatelessWidget {
       BuildContext context,
       ) {
     switch (appNavigationType) {
-      case AppNavigationType.MAIN:
-        return Container();
+      case AppNavigationType.EVENT:
+        return const EventPage();
       case AppNavigationType.BASKET:
         return Container();
       case AppNavigationType.MYTICKETS:

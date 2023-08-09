@@ -1,6 +1,6 @@
 part of 'app_navigation_bloc.dart';
 
-enum AppNavigationType { MAIN, MYTICKETS, BASKET, PROFILE }
+enum AppNavigationType { EVENT, MYTICKETS, BASKET, PROFILE }
 
 class AppNavigationState extends Equatable {
   const AppNavigationState({

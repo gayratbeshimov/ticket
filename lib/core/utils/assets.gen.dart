@@ -29,8 +29,30 @@ class $AssetsImagesGen {
   /// File path: assets/images/img.png
   AssetGenImage get img => const AssetGenImage('assets/images/img.png');
 
+  /// File path: assets/images/img_1.png
+  AssetGenImage get img1 => const AssetGenImage('assets/images/img_1.png');
+
+  /// File path: assets/images/img_2.png
+  AssetGenImage get img2 => const AssetGenImage('assets/images/img_2.png');
+
+  /// File path: assets/images/img_3.png
+  AssetGenImage get img3 => const AssetGenImage('assets/images/img_3.png');
+
+  /// File path: assets/images/img_4.png
+  AssetGenImage get img4 => const AssetGenImage('assets/images/img_4.png');
+
+  /// File path: assets/images/img_5.png
+  AssetGenImage get img5 => const AssetGenImage('assets/images/img_5.png');
+
+  /// File path: assets/images/img_6.png
+  AssetGenImage get img6 => const AssetGenImage('assets/images/img_6.png');
+
+  /// File path: assets/images/img_7.png
+  AssetGenImage get img7 => const AssetGenImage('assets/images/img_7.png');
+
   /// List of all assets
-  List<AssetGenImage> get values => [img];
+  List<AssetGenImage> get values =>
+      [img, img1, img2, img3, img4, img5, img6, img7];
 }
 
 class $AssetsLanguagesGen {
@@ -134,6 +156,10 @@ class $AssetsImagesIconsGen {
   /// File path: assets/images/icons/check_icon.svg
   SvgGenImage get checkIcon =>
       const SvgGenImage('assets/images/icons/check_icon.svg');
+
+  /// File path: assets/images/icons/click_logo.svg
+  SvgGenImage get clickLogo =>
+      const SvgGenImage('assets/images/icons/click_logo.svg');
 
   /// File path: assets/images/icons/clock.svg
   SvgGenImage get clock => const SvgGenImage('assets/images/icons/clock.svg');
@@ -295,6 +321,10 @@ class $AssetsImagesIconsGen {
 
   /// File path: assets/images/icons/obmen.svg
   SvgGenImage get obmen => const SvgGenImage('assets/images/icons/obmen.svg');
+
+  /// File path: assets/images/icons/payme_logo.svg
+  SvgGenImage get paymeLogo =>
+      const SvgGenImage('assets/images/icons/payme_logo.svg');
 
   /// File path: assets/images/icons/phone_icon.svg
   SvgGenImage get phoneIcon =>
@@ -466,6 +496,10 @@ class $AssetsImagesIconsGen {
   SvgGenImage get userTimer =>
       const SvgGenImage('assets/images/icons/user_timer.svg');
 
+  /// File path: assets/images/icons/uzum_logo.svg
+  SvgGenImage get uzumLogo =>
+      const SvgGenImage('assets/images/icons/uzum_logo.svg');
+
   /// File path: assets/images/icons/vector.png
   AssetGenImage get vector =>
       const AssetGenImage('assets/images/icons/vector.png');
@@ -505,6 +539,7 @@ class $AssetsImagesIconsGen {
         chat,
         check,
         checkIcon,
+        clickLogo,
         clock,
         communication,
         communicationActive,
@@ -549,6 +584,7 @@ class $AssetsImagesIconsGen {
         note,
         notification,
         obmen,
+        paymeLogo,
         phoneIcon,
         piceChart,
         piceChartAlt,
@@ -595,6 +631,7 @@ class $AssetsImagesIconsGen {
         uploadingFile,
         user,
         userTimer,
+        uzumLogo,
         vector,
         wallet,
         xIcon,

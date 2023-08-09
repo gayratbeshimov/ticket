@@ -1,3 +1,4 @@
+import 'dart:async';
 import 'dart:io';
 
 // import 'package:agent/core/constants/api_const.dart';
@@ -23,25 +24,25 @@ class HttpService {
 
   Dio? _dio;
 
-  Future<Response?> post({
+  FutureOr<Response?> post({
     required String apiURL,
     String? path,
     String? token,
-    dynamic data,
+    dynamic body,
     Map<String, dynamic>? parameters,
     bool isFormData = false,
   }) async {
     late Response response;
     try {
-      AppLoggerUtil.d("API: ${apiURL + path!} $data");
+      AppLoggerUtil.d("API: ${apiURL + path!} $body");
       if (token == null) {
         response = await _dio!.post(
           apiURL + path,
-          data: data,
+          data: body,
           options: Options(
             headers: {
               "Content-Type":
-                  isFormData ? "multipart/form-data" : "application/json"
+                  isFormData ? "multipart/form-data" : "application/json",
             },
           ),
           queryParameters: parameters,
@@ -50,7 +51,7 @@ class HttpService {
       } else {
         response = await _dio!.post(
           apiURL + path,
-          data: data,
+          data: body,
           options: Options(
             headers: {
               "Authorization": "Bearer $token",
@@ -70,7 +71,7 @@ class HttpService {
     }
   }
 
-  Future<Response?> patch({
+  FutureOr<Response?> patch({
     required String apiURL,
     String? path,
     String? token,
@@ -117,7 +118,7 @@ class HttpService {
     }
   }
 
-  Future<Response?> delete({
+  FutureOr<Response?> delete({
     required String apiURL,
     String? path,
     String? token,
@@ -158,7 +159,7 @@ class HttpService {
     }
   }
 
-  Future<Response?> put({
+  FutureOr<Response?> put({
     required String apiURL,
     String? path,
     String? token,
@@ -194,7 +195,7 @@ class HttpService {
     }
   }
 
-  Future<Response> get({
+  FutureOr<Response> get({
     required String apiURL,
     String? path,
     String? url,
@@ -245,7 +246,7 @@ class HttpService {
     }
   }
 
-  Future<Response?> download({
+  FutureOr<Response?> download({
     required String url,
   }) async {
     try {
