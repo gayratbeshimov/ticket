@@ -3,7 +3,6 @@ import 'dart:async';
 import 'package:bloc/bloc.dart';
 import 'package:equatable/equatable.dart';
 import 'package:flutter_modular/flutter_modular.dart';
-import 'package:ticket/core/services/http_service/signup_and_login_service.dart';
 import 'package:ticket/core/utils/app_logger_util.dart';
 import 'package:ticket/ui/pages/home_page/login_page/login_page.dart';
 import 'package:ticket/ui/widgets/app_widgets.dart';
@@ -58,19 +57,20 @@ class SignUpCubit extends Cubit<SignUpState> {
     try {
       if (checkEmpty()) {
         if (checkPasswords()) {
-          var response = await SignUpAndLoginService.to.signUp(
-            firstName: state.firstName,
-            lastname: state.lastName,
-            username: state.username.trim(),
-            email: state.email.trim(),
-            password: state.password.trim(),
-            duplicatePass: state.duplicatePass.trim(),
-          );
-          if (response != null && response as bool) {
-            Modular.to.pushNamed(LoginPage.routeName);
-          } else {
-            AppWidgets.showText(text: "Error");
-          }
+          Modular.to.pushNamed(LoginPage.routeName);
+          // var response = await SignUpAndLoginService.to.signUp(
+          //   firstName: state.firstName,
+          //   lastname: state.lastName,
+          //   username: state.username.trim(),
+          //   email: state.email.trim(),
+          //   password: state.password.trim(),
+          //   duplicatePass: state.duplicatePass.trim(),
+          // );
+          // if (response != null && response as bool) {
+          //   Modular.to.pushNamed(LoginPage.routeName);
+          // } else {
+          //   AppWidgets.showText(text: "Error");
+          // }
         } else {
           AppWidgets.showText(
               text: "Password is not equal to duplicate password");

@@ -67,9 +67,10 @@ class HomePage extends StatelessWidget {
                           ),
                         );
                       },
-                      icon:
-                          Assets.images.icons.home.svg(color: ColorName.white),
-                      iconOnTap: Assets.images.icons.homeActive.svg(),
+                      icon: Assets.images.icons.shopping
+                          .svg(color: ColorName.white),
+                      iconOnTap: Assets.images.icons.shopping
+                          .svg(color: ColorName.bluePercent),
                       title: "Events",
                       isActive:
                           state.appNavigationType == AppNavigationType.EVENT,
@@ -82,9 +83,10 @@ class HomePage extends StatelessWidget {
                           ),
                         );
                       },
-                      icon: Assets.images.icons.location
+                      icon: Assets.images.icons.shopping
                           .svg(color: ColorName.white),
-                      iconOnTap: Assets.images.icons.locationActive.svg(),
+                      iconOnTap: Assets.images.icons.shopping
+                          .svg(color: ColorName.bluePercent),
                       title: "Baskets",
                       isActive:
                           state.appNavigationType == AppNavigationType.BASKET,

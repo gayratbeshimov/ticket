@@ -10,10 +10,12 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:ticket/ui/pages/event_page/event_page.dart';
 import 'package:ticket/ui/pages/home_page/home_page.dart';
 import 'package:ticket/ui/pages/home_page/login_page/login_page.dart';
+import 'package:ticket/ui/pages/payment_page/payment_page.dart';
 import 'package:ticket/ui/pages/sign_up_page/sign_up_page.dart';
 
 import 'core/bloc/language_cubit/language_cubit.dart';
 import 'core/services/hive_service.dart';
+import 'core/services/http_service/event_service.dart';
 import 'core/services/http_service/http_service.dart';
 import 'core/services/http_service/signup_and_login_service.dart';
 
@@ -66,12 +68,12 @@ class AppModule extends Module {
           (i) => LanguageCubit(),
           onDispose: (v) => v.close(),
         ),
-    Bind<HiveService>((i) => HiveService.init()),
+    AsyncBind<HiveService>((i) => HiveService.init()),
         // AsyncBind<LocaleDbService>((i) => LocaleDbService.init()),
         Bind.lazySingleton<SignUpAndLoginService>(
             (i) => SignUpAndLoginService()),
 
-        // Bind.lazySingleton<AccountService>((i) => AccountService()),
+        Bind.lazySingleton<EventService>((i) => EventService()),
         // Bind.lazySingleton<RequestService>((i) => RequestService()),
         // Bind<SyncDataBloc>(
         //       (i) => SyncDataBloc(),
@@ -85,6 +87,7 @@ class AppModule extends Module {
         ModuleRoute("/", module: SignupModule()),
         ModuleRoute("/", module: LoginPageModule()),
         ModuleRoute("/", module: EventModule()),
+        ModuleRoute("/", module: PaymentModule()),
 
 
       ];

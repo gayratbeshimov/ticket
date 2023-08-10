@@ -72,6 +72,7 @@ class SignUpAndLoginService with APIConst {
           return false;
         }
       }
+      return false;
     } catch (e) {
       AppLoggerUtil.e("$e");
     }

@@ -3,6 +3,8 @@ import 'dart:async';
 import 'package:flutter_modular/flutter_modular.dart';
 import 'package:ticket/ui/pages/sign_up_page/sign_up_page.dart';
 
+import '../services/hive_service.dart';
+
 class AuthGuard extends RouteGuard {
   AuthGuard() : super(redirectTo: SignUpPage.routeName);
 
@@ -10,11 +12,8 @@ class AuthGuard extends RouteGuard {
 
   @override
   FutureOr<bool> canActivate(String path, ParallelRoute route) async {
-    // check login here
-    // if (HiveService.to.getIsLoggedIn()) {
-    //   await AccountsCubit.to.load();
-    // }
-    return true;
+
+    return HiveService.to.getIsLoggedIn();
 
     // HiveService.to.getIsLoggedIn();
   }

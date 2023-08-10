@@ -12,7 +12,7 @@ class HiveService {
 
   late Box _box;
 
-  static  init() async {
+  static Future<HiveService>  init() async {
     var instance = HiveService();
 
     instance._box = await Hive.openBox('ticket');

@@ -10,7 +10,7 @@ part 'payment_state.dart';
 class PaymentCubit extends Cubit<PaymentState> {
   static PaymentCubit get to => Modular.get<PaymentCubit>();
 
-  PaymentCubit() : super(PaymentState());
+  PaymentCubit() : super(const PaymentState());
 
   Future<void> load() async {
     try {
@@ -31,5 +31,9 @@ class PaymentCubit extends Cubit<PaymentState> {
       ));
       AppLoggerUtil.e("$e");
     }
+  }
+
+  void selectMethod({required Payments payment}) {
+    emit(state.copyWith(selectPay: payment));
   }
 }

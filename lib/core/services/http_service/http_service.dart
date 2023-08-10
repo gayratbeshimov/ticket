@@ -163,7 +163,7 @@ class HttpService {
     required String apiURL,
     String? path,
     String? token,
-    dynamic data,
+    dynamic data,  Map<String, dynamic>? parameters,
   }) async {
     late Response response;
     try {
@@ -172,6 +172,7 @@ class HttpService {
         response = await _dio!.put(
           apiURL + path,
           data: data,
+          queryParameters: parameters,
           options: Options(
             headers: {
               "Content-Type": "application/json",
@@ -183,6 +184,7 @@ class HttpService {
         response = await _dio!.put(
           apiURL + path,
           data: data,
+          queryParameters: parameters,
           options: Options(
             headers: {"Authorization": "Bearer $token"},
           ),

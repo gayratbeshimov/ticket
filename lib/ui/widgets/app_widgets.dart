@@ -10,7 +10,6 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:super_rich_text/super_rich_text.dart';
 
-import '../../core/utils/assets.gen.dart';
 import '../../core/utils/colors.gen.dart';
 
 class AppWidgets {
@@ -201,13 +200,9 @@ class AppWidgets {
     );
   }
 
-
-
-
   static Widget sizedBox() {
     return const SizedBox();
   }
-
 
   static Widget imageAsset({
     required String path,
@@ -257,6 +252,21 @@ class AppWidgets {
     );
   }
 
+  static Widget appName() {
+    return AppWidgets.textLocale(
+      localeKey: "///E-///Ticket",
+      isRichText: true,
+      othersMarkers: [
+        MarkerText(
+            marker: '///', style: const TextStyle(color: Colors.orangeAccent)),
+      ],
+      fontSize: 24.sp,
+      fontWeight: FontWeight.w600,
+      textAlign: TextAlign.start,
+      color: ColorName.green1,
+    );
+  }
+
   static Widget imageNetwork({
     required String url,
     double? height,
@@ -276,8 +286,6 @@ class AppWidgets {
     );
   }
 
-
-
   static Widget divider(
       {EdgeInsets margin = EdgeInsets.zero, Color color = ColorName.gray}) {
     return Container(
@@ -286,7 +294,4 @@ class AppWidgets {
       color: color,
     );
   }
-
-
-
 }
